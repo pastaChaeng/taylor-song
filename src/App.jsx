@@ -10,35 +10,35 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  min-width: 200vh;
-  background: linear-gradient(135deg, #f9c7c6, #f1d1ea, #f9c7c6, #f1d1ea, #f9c7c6);  
+  min-width: 100vw;
+  background: linear-gradient(135deg, #f9c7c6, #f1d1ea, #f9c7c6, #f1d1ea, #f9c7c6);
 `;
- 
+
 const Header = styled.header`
   text-align: center;
-  font-family: 'Gochi Hand', cursive; 
-  color: #6c3a36; 
+  font-family: 'Gochi Hand', cursive;
+  color: #6c3a36;
 `;
- 
+
 const MainContent = styled.div`
   text-align: center;
   font-size: 1.5rem;
-  color: #6c3a36;  
-  font-family: 'Montserrat', sans-serif; 
+  color: #6c3a36;
+  font-family: 'Montserrat', sans-serif;
 `;
- 
+
 const Footer = styled.footer`
   text-align: center;
-  font-family: 'Gochi Hand', cursive;  
-  color: #6c3a36; 
+  font-family: 'Gochi Hand', cursive;
+  color: #6c3a36;
 `;
- 
+
 const Heart = styled(motion.img)`
   position: absolute;
-  width: 25px;  
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));  
+  width: 25px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
- 
+
 const AudioPlayer = styled.audio`
   appearance: none;
   width: 300px;
@@ -91,6 +91,7 @@ const AudioPlayerContainer = styled.div`
   display: flex;
   align-items: center;
 `;
+ 
 
 const LoadingText = styled.p`
   font-size: 1.5rem;
@@ -99,9 +100,9 @@ const LoadingText = styled.p`
 `;
 
 const CorneliaStreet = () => {
-  const audioRef = useRef(null);
-  const [lyrics, setLyrics] = useState('');
-  const [loading, setLoading] = useState(true);
+  const audioRef = useRef(null) 
+  const [lyrics, setLyrics] = useState('') 
+  const [loading, setLoading] = useState(true) 
 
   useEffect(() => {
     const lyricsMap = {
@@ -149,24 +150,24 @@ const CorneliaStreet = () => {
     };
 
     const updateLyrics = () => {
-      const currentTime = Math.floor(audioRef.current.currentTime);
+      const currentTime = Math.floor(audioRef.current.currentTime) 
       if (lyricsMap[currentTime]) {
-        setLyrics(lyricsMap[currentTime]);
+        setLyrics(lyricsMap[currentTime]) 
       }
-    };
+    } 
 
-    const interval = setInterval(updateLyrics, 1000);
+    const interval = setInterval(updateLyrics, 1000) 
 
     setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+      setLoading(false) 
+    }, 2000) 
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval) 
   }, []);
 
   useEffect(() => {
     if (!loading) {
-      audioRef.current.play();
+      audioRef.current.play() 
     }
   }, [loading]);
 
@@ -187,7 +188,7 @@ const CorneliaStreet = () => {
                 delay: 1,
                 duration: 1,
                 type: 'spring',
-                stiffness: 200
+                stiffness: 200,
               }}
             >
               {lyrics}
@@ -203,7 +204,7 @@ const CorneliaStreet = () => {
           </AudioPlayerContainer>
 
           <Heart
-            src="src/love-always-wins.png"
+            src="https://cdn-icons-png.flaticon.com/128/8236/8236748.png"
             alt="Heart"
             initial={{ opacity: 0, y: -100 }}
             animate={{
@@ -214,8 +215,8 @@ const CorneliaStreet = () => {
               transition: {
                 duration: 1.5,
                 ease: 'easeInOut',
-                repeat: Infinity
-              }
+                repeat: Infinity,
+              },
             }}
           />
           <Heart
@@ -231,8 +232,8 @@ const CorneliaStreet = () => {
                 duration: 1.5,
                 ease: 'easeInOut',
                 repeat: Infinity,
-                delay: 0.5
-              }
+                delay: 0.5,
+              },
             }}
           />
 
@@ -242,10 +243,10 @@ const CorneliaStreet = () => {
             style={{
               width: '150px',
               position: 'absolute',
-              top: '25px', 
-              left: '50%', 
-              transform: 'translateX(-50%)', 
-              zIndex: '30' 
+              top: '25px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              zIndex: '30',
             }}
           />
         </>
