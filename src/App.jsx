@@ -220,7 +220,7 @@ const CorneliaStreet = () => {
             }}
           />
           <Heart
-            src="src/love-always-wins.png"
+            src="https://cdn-icons-png.flaticon.com/128/8236/8236748.png"
             alt="Heart"
             initial={{ opacity: 0, y: 100 }}
             animate={{
