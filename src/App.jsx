@@ -247,6 +247,9 @@ const CorneliaStreet = () => {
               left: '50%',
               transform: 'translateX(-50%)',
               zIndex: '30',
+              boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)',
+              filter: 'drop-shadow(0px 0px 10px #ff69b4)',
+              borderRadius: '5px',
             }}
           />
         </>
